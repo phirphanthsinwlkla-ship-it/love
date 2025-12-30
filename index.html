@@ -1,95 +1,155 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>รักพี่หมู ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>รักพี่หมู ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-    }
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #ffb6c1, #ff5f9e);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .card {
-      background: rgba(255,255,255,0.9);
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      animation: fadeIn 2s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
+.card {
+  background: rgba(255,255,255,0.93);
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 380px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease;
+  z-index: 2;
+}
 
-    h1 {
-      color: #ff4d6d;
-      font-size: 2.2em;
-      margin-bottom: 10px;
-      animation: heartbeat 1.5s infinite;
-    }
+h1 {
+  color: #ff2d55;
+  animation: heartbeat 1.5s infinite;
+}
 
-    p {
-      font-size: 1.2em;
-      color: #333;
-    }
+p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.05em;
+}
 
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      background: #ff4d6d;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
+button {
+  margin-top: 20px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #ff2d55;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
 
-    button:hover {
-      background: #e63950;
-    }
+button:hover {
+  background: #e0264a;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* หัวใจลอย */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp linear forwards;
+}
 
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.1); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-  </style>
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* พลุ */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(20); opacity: 0; }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>รักพี่หมู ❤️🐷</h1>
-    <p>
-      รักจริง ไม่ได้เขียนเล่น  
-      อยู่ด้วยกันไปนาน ๆ นะ 💕
-    </p>
+<div class="card">
+  <h1>รักพี่หมู ❤️🐷</h1>
+  <p>
+    รักนะ รักแบบไม่เผื่อใจให้ใครอื่น  
+    ขอบคุณที่เข้ามาเป็นรอยยิ้ม  
+    เป็นกำลังใจ และเป็นความสบายใจในทุกวัน  
+    <br><br>
+    ไม่ว่าจะวันดีหรือวันที่เหนื่อย  
+    อยากจับมือพี่หมูเดินไปด้วยกัน  
+    แบบไม่ปล่อย ไม่ทิ้ง และไม่หายไปไหน  
+    <br><br>
+    รักจริง ไม่ได้เขียนเล่น  
+    รักพี่หมูที่สุดในโลกเลย 💕
+  </p>
 
-    <button onclick="playMusic()">🎵 เปิดเพลงรัก</button>
-  </div>
+  <button onclick="startLove()">🎶 เปิดเพลงรัก</button>
+</div>
 
-  <!-- เพลงรัก (ออนไลน์ ใช้ได้จริง) -->
-  <audio id="music">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+<!-- เพลง -->
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-  <script>
-    function playMusic() {
-      document.getElementById("music").play();
-    }
-  </script>
+<script>
+function startLove() {
+  document.getElementById("music").play();
+  setInterval(createHeart, 300);
+  setInterval(createFirework, 1200);
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+
+function createFirework() {
+  const fw = document.createElement("div");
+  fw.className = "firework";
+  fw.style.left = Math.random() * 100 + "vw";
+  fw.style.top = Math.random() * 50 + "vh";
+  document.body.appendChild(fw);
+  setTimeout(() => fw.remove(), 1200);
+}
+</script>
 
 </body>
 </html>
