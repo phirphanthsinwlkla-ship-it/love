@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>รักพี่หมู 💖</title>
+  <meta charset="UTF-8">
+  <title>รักพี่หมู ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#ffb6c1,#ffd1dc);
-  font-family:'Segoe UI',sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
 
-.card{
-  background:white;
-  padding:35px;
-  border-radius:25px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  animation:fadeIn 2s ease;
-}
+    .card {
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
 
-h1{
-  color:#ff4d6d;
-  font-size:36px;
-}
+    h1 {
+      color: #ff4d6d;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      animation: heartbeat 1.5s infinite;
+    }
 
-p{
-  font-size:18px;
-  color:#555;
-}
+    p {
+      font-size: 1.2em;
+      color: #333;
+    }
 
-button{
-  margin-top:20px;
-  padding:12px 28px;
-  border:none;
-  border-radius:25px;
-  background:#ff4d6d;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-  transition:0.3s;
-}
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
 
-button:hover{
-  background:#ff2e55;
-}
+    button:hover {
+      background: #e63950;
+    }
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h1>พี่หมู 💖</h1>
-  <p>เค้าอยากบอกพี่ว่า…</p>
-  <h2>รักพี่หมูมากที่สุดเลยนะ 🥰</h2>
-  <button onclick="playMusic()">กดฟังเพลงรัก 🎵</button>
-</div>
+  <div class="card">
+    <h1>รักพี่หมู ❤️🐷</h1>
+    <p>
+      รักจริง ไม่ได้เขียนเล่น  
+      อยู่ด้วยกันไปนาน ๆ นะ 💕
+    </p>
 
-<audio id="music">
-  <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_0f1d7c3d88.mp3" type="audio/mpeg">
-</audio>
+    <button onclick="playMusic()">🎵 เปิดเพลงรัก</button>
+  </div>
 
-<script>
-function playMusic(){
-  document.getElementById("music").play();
-}
-</script>
+  <!-- เพลงรัก (ออนไลน์ ใช้ได้จริง) -->
+  <audio id="music">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function playMusic() {
+      document.getElementById("music").play();
+    }
+  </script>
 
 </body>
 </html>
