@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รักพี่หมู 💖</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffb6c1,#ffd1dc);
+  font-family:'Segoe UI',sans-serif;
+}
+
+.card{
+  background:white;
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fadeIn 2s ease;
+}
+
+h1{
+  color:#ff4d6d;
+  font-size:36px;
+}
+
+p{
+  font-size:18px;
+  color:#555;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 28px;
+  border:none;
+  border-radius:25px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff2e55;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>พี่หมู 💖</h1>
+  <p>เค้าอยากบอกพี่ว่า…</p>
+  <h2>รักพี่หมูมากที่สุดเลยนะ 🥰</h2>
+  <button onclick="playMusic()">กดฟังเพลงรัก 🎵</button>
+</div>
+
+<audio id="music">
+  <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_0f1d7c3d88.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic(){
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
