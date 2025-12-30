@@ -19,8 +19,8 @@ body {
 
 .card {
   background: rgba(255,255,255,0.93);
-  padding: 35px;
-  border-radius: 25px;
+  padding: 36px;
+  border-radius: 26px;
   text-align: center;
   max-width: 380px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.3);
@@ -35,17 +35,17 @@ h1 {
 
 p {
   color: #333;
-  line-height: 1.8;
+  line-height: 1.85;
   font-size: 1.05em;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 22px;
   padding: 14px 30px;
   border: none;
   border-radius: 30px;
   background: #ff2d55;
-  color: white;
+  color: #fff;
   font-size: 1em;
   cursor: pointer;
 }
@@ -104,9 +104,8 @@ button:hover {
 <div class="card">
   <h1>รักพี่หมู ❤️🐷</h1>
   <p>
-    รักนะ รักแบบไม่เผื่อใจให้ใครอื่น  
-    ขอบคุณที่เข้ามาเป็นรอยยิ้ม  
-    เป็นกำลังใจ และเป็นความสบายใจในทุกวัน  
+    รักนะ รักแบบตั้งใจ รักแบบไม่เผื่อใจให้ใครอื่น  
+    ขอบคุณที่เข้ามาเป็นรอยยิ้ม เป็นความสบายใจในทุกวัน  
     <br><br>
     ไม่ว่าจะวันดีหรือวันที่เหนื่อย  
     อยากจับมือพี่หมูเดินไปด้วยกัน  
@@ -119,14 +118,15 @@ button:hover {
   <button onclick="startLove()">🎶 เปิดเพลงรัก</button>
 </div>
 
-<!-- เพลง -->
+<!-- เพลง (ต้องมีไฟล์ song.mp3 อยู่โฟลเดอร์เดียวกัน) -->
 <audio id="music" loop>
   <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 function startLove() {
-  document.getElementById("music").play();
+  const music = document.getElementById("music");
+  music.play();
   setInterval(createHeart, 300);
   setInterval(createFirework, 1200);
 }
@@ -134,7 +134,7 @@ function startLove() {
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = "❤️";
+  heart.textContent = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = (3 + Math.random() * 2) + "s";
   document.body.appendChild(heart);
